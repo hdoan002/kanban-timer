@@ -1,1 +1,1 @@
-# kanban-timer
+# Kanban Timer
