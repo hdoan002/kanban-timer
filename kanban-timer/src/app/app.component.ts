@@ -22,6 +22,10 @@ export class AppComponent {
       tasks : ['Get somewheree', 'somethingg']
     },
   ];
+  // This variable is property binded to card title
+  cardTitle = 'Test title';
+  cardPriority = 'Low';
+
 
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);

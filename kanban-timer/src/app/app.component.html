@@ -20,5 +20,24 @@
     </div>
 </div>
 
+<h2>Testing list with card</h2>
+<div cdkDropListGroup>
+    <!-- All lists in here will be connected. -->
+    <div class="example-container" *ngFor="let card of stuffing">
+        <h2>{{card.title}}</h2>
+    
+        <div
+            cdkDropList
+            [cdkDropListData]="card.tasks"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of card.tasks" cdkDrag>{{item}}</div>
+            <div cdkDrag>
+                <app-card [title]="cardTitle" [subtitle]='cardPriority'></app-card>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h2>Will need to add timer for current sprint:</h2>
 <router-outlet></router-outlet>
