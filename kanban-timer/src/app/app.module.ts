@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // Angular Material Imports
 import { MatCardModule } from '@angular/material/card';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 // Angular Module & Component Imports
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +20,8 @@ import { CardComponent } from './card/card.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

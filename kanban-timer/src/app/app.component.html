@@ -4,6 +4,21 @@
 <h2>Testing card here: (Can use drop down to move cards. Should drag and down to list)</h2>
 <app-card></app-card>
 
+<h2>Drag and drop here:</h2>
+<div cdkDropListGroup>
+    <!-- All lists in here will be connected. -->
+    <div class="example-container" *ngFor="let card of stuffing">
+        <h2>{{card.title}}</h2>
+    
+        <div
+            cdkDropList
+            [cdkDropListData]="card.tasks"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of card.tasks" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+</div>
 
 <h2>Will need to add timer for current sprint:</h2>
 <router-outlet></router-outlet>
