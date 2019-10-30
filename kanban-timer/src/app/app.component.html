@@ -1,39 +1,19 @@
 <h2>Need to test for list here:</h2>
 
+<h2>Testing drag and drop list with card:</h2>
 
-<h2>Testing card here: (Can use drop down to move cards. Should drag and down to list)</h2>
-<app-card></app-card>
-
-<h2>Drag and drop here:</h2>
 <div cdkDropListGroup>
     <!-- All lists in here will be connected. -->
-    <div class="example-container" *ngFor="let card of stuffing">
-        <h2>{{card.title}}</h2>
+    <div class="example-container" *ngFor="let cardItem of cardList">
+        <h2>{{cardItem.title}}</h2>
     
         <div
             cdkDropList
-            [cdkDropListData]="card.tasks"
+            [cdkDropListData]="cardItem.tasks"
             class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of card.tasks" cdkDrag>{{item}}</div>
-        </div>
-    </div>
-</div>
-
-<h2>Testing list with card</h2>
-<div cdkDropListGroup>
-    <!-- All lists in here will be connected. -->
-    <div class="example-container" *ngFor="let card of stuffing">
-        <h2>{{card.title}}</h2>
-    
-        <div
-            cdkDropList
-            [cdkDropListData]="card.tasks"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of card.tasks" cdkDrag>{{item}}</div>
-            <div cdkDrag>
-                <app-card [title]="cardTitle" [subtitle]='cardPriority'></app-card>
+            <div class="example-box" *ngFor="let item of cardItem.tasks" cdkDrag>
+                <app-card [cardInput]="item"></app-card>
             </div>
         </div>
     </div>

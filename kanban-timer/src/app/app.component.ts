@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Card } from './card/card';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +9,80 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class AppComponent {
   title = 'kanban-timer';
-  stuffing = [
-    {
-      title: 'Todo',
-      tasks : ['Get somewhere', 'something']
-    },
-    {
-      title: 'In Progress',
-      tasks : ['Get somewheree', 'somethingg']
-    },
-    {
-      title: 'Done',
-      tasks : ['Get somewheree', 'somethingg']
-    },
-  ];
-  // This variable is property binded to card title
-  cardTitle = 'Test title';
-  cardPriority = 'Low';
 
+  card: Card;
+
+  cardList = [
+    {
+      title: 'Start',
+      tasks: [
+        this.card = {
+          title: 'a',
+          subtitle: 'Something',
+          description: 'start',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'b',
+          subtitle: 'Something',
+          description: 'start',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'c',
+          subtitle: 'Something',
+          description: 'start',
+          date: 'Some'
+        },
+      ]
+    },
+    {
+      title: 'Middle',
+      tasks: [
+        this.card = {
+          title: 'a',
+          subtitle: 'Something',
+          description: 'mid',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'b',
+          subtitle: 'Something',
+          description: 'mid',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'c',
+          subtitle: 'Something',
+          description: 'mid',
+          date: 'Some'
+        },
+      ]
+    },
+    {
+      title: 'End',
+      tasks: [
+        this.card = {
+          title: 'a',
+          subtitle: 'Something',
+          description: 'end',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'b',
+          subtitle: 'Something',
+          description: 'end',
+          date: 'Some'
+        },
+        this.card = {
+          title: 'c',
+          subtitle: 'Something',
+          description: 'end',
+          date: 'Some'
+        },
+      ]
+    }
+  ];
 
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);
