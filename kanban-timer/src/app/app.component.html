@@ -1,12 +1,25 @@
-<h2>Need to test for list here:</h2>
+<div class="container">
+    <h1>Kanban Timer</h1>
+    <div class="flex-row flex">
+      <button mat-raised-button color="primary" (click)="addList()">Add new list</button>
+      <div class="button-space"></div>
+      <button mat-raised-button color="primary" (click)="openDialog()">Add new card</button>
+      <div class="button-space"></div>
+      <button mat-raised-button color="primary" (click)="setTimer()">Set timer</button>
+    </div>
+</div>
 
-<h2>Testing drag and drop list with card:</h2>
+<div class="spacer-row"></div>
 
-<div cdkDropListGroup>
-    <!-- All lists in here will be connected. -->
+<div class="container">
+    <countdown [config]="{leftTime: 30}"></countdown>
+</div>
+
+<div class="spacer-row"></div>
+
+<div class="container flex flex-row" cdkDropListGroup>
     <div class="example-container" *ngFor="let cardItem of cardList">
         <h2>{{cardItem.title}}</h2>
-    
         <div
             cdkDropList
             [cdkDropListData]="cardItem.tasks"
@@ -19,5 +32,6 @@
     </div>
 </div>
 
-<h2>Will need to add timer for current sprint:</h2>
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
