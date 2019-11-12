@@ -9,4 +9,4 @@ Clockify Chrome Extension: https://clockify.me/trello-time-tracking
 Angular Materials CDK Drag and Drop: https://material.angular.io/cdk/drag-drop/overview
 
 Current UI:
-<img src="https://github.com/hdoan002/kanban-timer/Starting-UI.png"/>
+<img src="https://github.com/hdoan002/kanban-timer/blob/master/Starting-UI.png"/>
