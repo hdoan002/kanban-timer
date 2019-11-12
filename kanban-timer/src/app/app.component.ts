@@ -109,6 +109,11 @@ export class AppComponent {
     }
   ];
 
+
+  constructor(public dialog: MatDialog) {}
+
+
+  // [Function]
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);
     if (event.previousContainer === event.container) {
@@ -121,18 +126,38 @@ export class AppComponent {
     }
   }
 
-
-  constructor(public dialog: MatDialog) {}
-
+  // [Function]
   openDialog(): void {
     const dialogRef = this.dialog.open(CardDialogComponent, {
-      width: '250px',
+      width: '750px',
       data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  // [Function]
+  addList() {
+    console.log('User wants to add new list');
+    this.cardList.push({
+      title: 'New List',
+      tasks: [
+        this.card = {
+          title: 'Sample',
+          subtitle: 'Extreme',
+          description: 'New List',
+          date: 'Some'
+        }
+      ]
+    });
+  }
+
+
+  // [Function]
+  setTimer() {
+    console.log('User wants to set the timer');
   }
 
 }

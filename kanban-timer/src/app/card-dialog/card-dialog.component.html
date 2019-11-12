@@ -1,9 +1,9 @@
-<h1 mat-dialog-title>Hi</h1>
+<h1 mat-dialog-title>Add new card</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <p>Where would you like to add your card?</p>
   
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+  <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-button color="success" [mat-dialog-close]="" cdkFocusInitial>Save</button>
 </div>
