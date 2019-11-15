@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Card } from './card/card';
 import { CardDialogComponent } from './card-dialog/card-dialog.component';
 
@@ -130,7 +130,7 @@ export class AppComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(CardDialogComponent, {
       width: '750px',
-      data: {}
+      data: {title: ''}
     });
 
     dialogRef.afterClosed().subscribe(result => {

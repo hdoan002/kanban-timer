@@ -2,6 +2,37 @@
 <div mat-dialog-content>
   <p>Where would you like to add your card?</p>
   
+  <div class="row">
+    <div class="col">
+        <mat-form-field class="full-width">
+            <mat-select placeholder="List">
+                <mat-option value="option">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="data.title" placeholder="Card Title">
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="data.subtitle" placeholder="Card Priority">
+        </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <mat-form-field class="full-width">
+            <textarea matInput placeholder="Description"></textarea>
+        </mat-form-field>
+    </div>
+  </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
