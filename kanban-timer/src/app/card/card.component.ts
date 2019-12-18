@@ -11,16 +11,18 @@ export class CardComponent implements OnInit {
   @Input() cardInput: Card;
 
   cardTitle: string;
-  cardSubtitle: string;
+  cardPriority: string;
   cardDescription: string;
+  cardDate: string;
 
   constructor() { }
 
   ngOnInit() {
     this.call();
     this.cardTitle = this.cardInput.title;
-    this.cardSubtitle = this.cardInput.subtitle;
+    this.cardPriority = this.cardInput.priority;
     this.cardDescription = this.cardInput.description;
+    this.cardDate = this.cardInput.date;
   }
 
   call() {

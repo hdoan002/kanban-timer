@@ -9,6 +9,9 @@ import { Card } from '../card/card';
 })
 export class CardDialogComponent implements OnInit {
 
+  listArray = ['Start', 'Middle', 'End'];
+  listSelect: string;
+
   constructor(public dialogRef: MatDialogRef<CardDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: Card) { }
 
   ngOnInit() {

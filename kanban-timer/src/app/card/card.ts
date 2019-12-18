@@ -1,6 +1,7 @@
 export class Card {
     title: string;
-    subtitle: string;
+    priority: string;
     description: string;
+    list: string;
     date: string;
 }

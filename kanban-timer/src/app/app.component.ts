@@ -14,27 +14,38 @@ export class AppComponent {
 
   card: Card;
 
+  sampleCard: Card = {
+    title: '',
+    priority: '',
+    description: '',
+    list: '',
+    date: Date()
+  };
+
   cardList = [
     {
       title: 'Start',
       tasks: [
         this.card = {
           title: 'a',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'start',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'b',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'start',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'c',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'start',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
       ]
     },
@@ -43,21 +54,24 @@ export class AppComponent {
       tasks: [
         this.card = {
           title: 'a',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'mid',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'b',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'mid',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'c',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'mid',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
       ]
     },
@@ -66,21 +80,24 @@ export class AppComponent {
       tasks: [
         this.card = {
           title: 'a',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'b',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'c',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
       ]
     },
@@ -89,21 +106,24 @@ export class AppComponent {
       tasks: [
         this.card = {
           title: 'a',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'b',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
         this.card = {
           title: 'c',
-          subtitle: 'Something',
+          priority: 'Something',
           description: 'end',
-          date: 'Some'
+          list: '',
+          date: Date()
         },
       ]
     }
@@ -130,13 +150,29 @@ export class AppComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(CardDialogComponent, {
       width: '750px',
-      data: {title: ''}
+      data: {
+        title: this.sampleCard.title,
+        priority: this.sampleCard.priority,
+        description: this.sampleCard.description,
+        date: this.sampleCard.date}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.card = result;
+      console.log('Record data:' + this.card);
+      console.log('List selected: ' + this.card.list);
     });
   }
+
+
+  // [Function]
+  saveCard() {
+    console.log('Saving card to storage');
+    // will send data to update DB
+    // need to prompt update to screen
+  }
+
 
   // [Function]
   addList() {
@@ -146,9 +182,10 @@ export class AppComponent {
       tasks: [
         this.card = {
           title: 'Sample',
-          subtitle: 'Extreme',
+          priority: 'Extreme',
           description: 'New List',
-          date: 'Some'
+          list: '',
+          date: Date()
         }
       ]
     });

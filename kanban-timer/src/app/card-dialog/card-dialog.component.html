@@ -5,8 +5,8 @@
   <div class="row">
     <div class="col">
         <mat-form-field class="full-width">
-            <mat-select placeholder="List">
-                <mat-option value="option">Option</mat-option>
+            <mat-select placeholder="List" [(ngModel)]="data.list">
+                <mat-option *ngFor="let list of listArray" [value]="list">{{list}}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col">
         <mat-form-field class="full-width">
-            <input matInput [(ngModel)]="data.subtitle" placeholder="Card Priority">
+            <input matInput [(ngModel)]="data.priority" placeholder="Card Priority">
         </mat-form-field>
     </div>
   </div>
@@ -29,12 +29,12 @@
   <div class="row">
     <div class="col">
         <mat-form-field class="full-width">
-            <textarea matInput placeholder="Description"></textarea>
+            <textarea matInput [(ngModel)]="data.description" placeholder="Description"></textarea>
         </mat-form-field>
     </div>
   </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
-  <button mat-button color="success" [mat-dialog-close]="" cdkFocusInitial>Save</button>
+  <button mat-button color="success" [mat-dialog-close]="data" cdkFocusInitial>Save</button>
 </div>
