@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -21,12 +22,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './card/card.component';
 import { CardDialogComponent } from './card-dialog/card-dialog.component';
+import { NavComponent } from './nav/nav.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardDialogComponent
+    CardDialogComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +43,11 @@ import { CardDialogComponent } from './card-dialog/card-dialog.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatToolbarModule,
     DragDropModule,
     CountdownModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [CardDialogComponent],
 })

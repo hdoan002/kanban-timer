@@ -1,32 +1,39 @@
-<div class="container">
-    <h1>Kanban Timer</h1>
-    <div class="flex-row flex">
-      <button mat-raised-button color="primary" (click)="addList()">Add new list</button>
-      <div class="button-space"></div>
-      <button mat-raised-button color="primary" (click)="openDialog()">Add new card</button>
-      <div class="button-space"></div>
-      <button mat-raised-button color="primary" (click)="setTimer()">Set timer</button>
-    </div>
-</div>
+<app-nav></app-nav>
 
 <div class="spacer-row"></div>
 
 <div class="container">
-    <countdown [config]="{leftTime: 3000000}"></countdown>
+    <mat-toolbar class="countToolbar">
+        <h2>Current Sprint Countdown: (</h2>
+        <countdown #cd1 [config]="{leftTime: 3000000}"></countdown>
+        <h2>)</h2>
+        <div class="button-space"></div>
+        <button mat-raised-button (click)="cd1.pause()" >Pause</button>
+        <div class="button-space"></div>
+        <button mat-raised-button (click)="cd1.resume()" >Resume</button>
+        <div class="button-space"></div>
+        <button mat-raised-button (click)="cd1.stop()" >Stop</button>
+        <div class="button-space"></div>
+        <button mat-raised-button (click)="cd1.restart()" >Restart</button>
+    </mat-toolbar>
 </div>
 
 <div class="spacer-row"></div>
 
-<div class="container flex flex-row" cdkDropListGroup>
-    <div class="example-container" *ngFor="let cardItem of cardList">
-        <h2>{{cardItem.title}}</h2>
+<div class="container flex flex-row list-scroll" cdkDropListGroup>
+    <div class="example-container" *ngFor="let cardItem of cardList">        
         <div
             cdkDropList
             [cdkDropListData]="cardItem.tasks"
-            class="example-list"
+            class="list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of cardItem.tasks" cdkDrag>
-                <app-card [cardInput]="item"></app-card>
+            <div class="container listTitle">
+                <h3>{{cardItem.title}}</h3>
+            </div>
+            <div class="listScroll">
+                <div class="box" *ngFor="let item of cardItem.tasks" cdkDrag>
+                    <app-card [cardInput]="item"></app-card>
+                </div>
             </div>
         </div>
     </div>

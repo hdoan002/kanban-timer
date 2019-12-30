@@ -1,9 +1,31 @@
 
-.example-card {
-    max-width: 300px;
+.card {
+    width: 250px;
+    height: 130px;
 }
-  
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+
+.header {
+    margin: 0 0 0 0 !important;
+}
+
+.cardTitle, .cardPriority {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: normal !important;
+    width: inherit;
+    display: block;
+    white-space: nowrap;
+}
+
+.cardContent > * {
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: normal !important;
+    width: inherit;
+    display: block;
+    white-space: nowrap;
+    /* padding-bottom: 10px; */
 }

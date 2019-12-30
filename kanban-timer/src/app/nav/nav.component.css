@@ -1,0 +1,11 @@
+.nav-item , mat-button {
+    color: white;
+}
+
+.navbar {
+    width: 100% !important;
+}
+
+mat-button, :disabled {
+    color: #ccc;
+}

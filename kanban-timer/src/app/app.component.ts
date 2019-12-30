@@ -3,6 +3,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { MatDialog } from '@angular/material/dialog';
 import { Card } from './card/card';
 import { CardDialogComponent } from './card-dialog/card-dialog.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -19,118 +20,118 @@ export class AppComponent {
     priority: '',
     description: '',
     list: '',
-    date: Date()
+    date: this.datepipe.transform(Date(), 'MM/dd/yyyy')
   };
 
   cardList = [
     {
-      title: 'Start',
+      title: 'Back log',
       tasks: [
         this.card = {
-          title: 'a',
-          priority: 'Something',
-          description: 'start',
+          title: 'Finish my Favorite Game',
+          priority: 'Low',
+          description: 'Finish building my game and get it hosted!',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'b',
-          priority: 'Something',
-          description: 'start',
+          title: 'Hike the Long Path North Trail',
+          priority: 'Extreme',
+          description: 'Go for a hike and take in nature',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'c',
-          priority: 'Something',
-          description: 'start',
+          title: 'Ride the London Underground',
+          priority: 'Extreme',
+          description: 'Enjoy London from underneath',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
       ]
     },
     {
-      title: 'Middle',
+      title: 'In progress',
       tasks: [
         this.card = {
-          title: 'a',
-          priority: 'Something',
-          description: 'mid',
+          title: 'Leave a Note in a Library Book',
+          priority: 'Low',
+          description: 'Pass on a happy note',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'b',
-          priority: 'Something',
-          description: 'mid',
+          title: 'Laugh Daily',
+          priority: 'Extreme',
+          description: 'Be happy',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'c',
-          priority: 'Something',
-          description: 'mid',
+          title: 'Cruise the Caribbean',
+          priority: 'Extreme',
+          description: 'Explore the world',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
       ]
     },
     {
-      title: 'End',
+      title: 'Review',
       tasks: [
         this.card = {
-          title: 'a',
-          priority: 'Something',
-          description: 'end',
+          title: 'Learn 100 Basic American Sign Language Signs',
+          priority: 'Extreme',
+          description: 'Keep learn',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'b',
-          priority: 'Something',
-          description: 'end',
+          title: 'Dive the Great Barrier Reef',
+          priority: 'Extreme',
+          description: 'Explore life underwater',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'c',
-          priority: 'Something',
-          description: 'end',
+          title: 'Quit Caffeine',
+          priority: 'Low',
+          description: 'Take control of my coffee budget!',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
       ]
     },
     {
-      title: 'End',
+      title: 'Completed',
       tasks: [
         this.card = {
-          title: 'a',
-          priority: 'Something',
-          description: 'end',
+          title: 'Invest in a Business',
+          priority: 'Extreme',
+          description: 'Fund another business',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'b',
-          priority: 'Something',
-          description: 'end',
+          title: 'Be a True Inspiration to Someone',
+          priority: 'Extreme',
+          description: 'Always push others forward',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
         this.card = {
-          title: 'c',
-          priority: 'Something',
-          description: 'end',
+          title: 'Make Homemade Bagels',
+          priority: 'Extreme',
+          description: 'I like bagels',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         },
       ]
     }
   ];
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public datepipe: DatePipe) {}
 
 
   // [Function]
@@ -185,7 +186,7 @@ export class AppComponent {
           priority: 'Extreme',
           description: 'New List',
           list: '',
-          date: Date()
+          date: this.datepipe.transform(Date(), 'MMM dd, yyyy')
         }
       ]
     });
