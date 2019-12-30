@@ -2,6 +2,9 @@
 
 ## Overview
 Current UI:
+<img src="https://github.com/hdoan002/kanban-timer/blob/master/demo.gif"/>
+
+Old UI
 <img src="https://github.com/hdoan002/kanban-timer/blob/master/Starting-UI-v2.png"/>
 
 Inspiration:
